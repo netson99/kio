@@ -1,0 +1,280 @@
+Source: kio
+Section: libs
+Priority: optional
+Maintainer: Debian/Kubuntu Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Uploaders: Maximiliano Curia <maxy@debian.org>
+Build-Depends: cmake (>= 3.0~),
+               debhelper (>= 11~),
+               doxygen,
+               extra-cmake-modules (>= 5.51.0~),
+               graphviz,
+               libacl1-dev,
+               libkf5archive-dev (>= 5.51.0~),
+               libkf5auth-dev (>= 5.51.0~),
+               libkf5bookmarks-dev (>= 5.51.0~),
+               libkf5codecs-dev (>= 5.7.0),
+               libkf5completion-dev (>= 5.51.0~),
+               libkf5config-dev (>= 5.51.0~),
+               libkf5configwidgets-dev (>= 5.51.0~),
+               libkf5coreaddons-dev (>= 5.51.0~),
+               libkf5crash-dev (>= 5.51.0~),
+               libkf5dbusaddons-dev (>= 5.51.0~),
+               libkf5doctools-dev (>= 5.51.0~),
+               libkf5i18n-dev (>= 5.51.0~),
+               libkf5iconthemes-dev (>= 5.51.0~),
+               libkf5itemviews-dev (>= 5.51.0~),
+               libkf5jobwidgets-dev (>= 5.51.0~),
+               libkf5notifications-dev (>= 5.51.0~),
+               libkf5service-dev (>= 5.51.0~),
+               libkf5solid-dev (>= 5.51.0~),
+               libkf5textwidgets-dev (>= 5.51.0~),
+               libkf5wallet-dev (>= 5.51.0~),
+               libkf5widgetsaddons-dev (>= 5.51.0~),
+               libkf5windowsystem-dev (>= 5.51.0~),
+               libkf5xmlgui-dev (>= 5.51.0~),
+               libkrb5-dev,
+               libqt5sql5-sqlite,
+               libqt5x11extras5-dev (>= 5.8.0~),
+               libxml2-dev,
+               libxslt1-dev,
+               pkg-kde-tools (>= 0.15.15ubuntu1~),
+               qtbase5-dev (>= 5.8.0~),
+               qtdeclarative5-dev,
+               qtscript5-dev (>= 5.8.0~),
+               qttools5-dev,
+               qttools5-dev-tools (>= 5.4),
+               zlib1g-dev
+Standards-Version: 4.1.4
+Homepage: https://projects.kde.org/projects/frameworks/kio
+Vcs-Browser: https://salsa.debian.org/qt-kde-team/kde/kio
+Vcs-Git: https://salsa.debian.org/qt-kde-team/kde/kio.git
+
+Package: kio
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, kded5
+Breaks: baloo-kf5 (<< 5.51),
+        kdesignerplugin (<< 5.51),
+        kinit (<< 5.51),
+        kio-extras (<< 4:5.0.95-0ubuntu1~ubuntu14.10~ppa6),
+        kio-extras-data (<< 4:5.0.95-0ubuntu1~ubuntu14.10~ppa6),
+        kross (<< 5.51),
+        ktexteditor-katepart (<< 5.42),
+        libkf5declarative5 (<< 5.51),
+        libkf5kdelibs4support5 (<< 5.51),
+        libkf5kdelibs4support5-bin (<< 5.51),
+        libkf5khtml-bin (<< 5.51),
+        libkf5khtml5 (<< 5.51),
+        libkf5krossui5 (<< 5.51),
+        libkf5mediaplayer5 (<< 5.42),
+        libkf5newstuff5 (<< 5.51),
+        libkf5newstuffcore5 (<< 5.51),
+        libkf5notifyconfig5 (<< 5.51),
+        libkf5parts-plugins (<< 5.42),
+        libkf5parts5 (<< 5.51),
+        libkf5plasma5 (<< 5.51),
+        libkf5plasmaquick5 (<< 5.42),
+        libkf5purpose-bin (<< 5.51),
+        libkf5runner5 (<< 5.51),
+        libkf5texteditor5 (<< 5.51),
+        libkf5webkit5 (<< 5.51),
+        libkf5xmlrpcclient5 (<< 5.51),
+        plasma-framework (<< 5.51),
+        qml-module-org-kde-kio (<< 5.51)
+Replaces: kio-extras (<< 4:5.0.95-0ubuntu1~ubuntu14.10~ppa6),
+          kio-extras-data (<< 4:5.0.95-0ubuntu1~ubuntu14.10~ppa6)
+Description: resource and network access abstraction
+ KDE Input/Output framework provides a single API for
+ operating on files, whether local or on a remote server.
+ Additionally, KIO Slaves provide support for individual
+ protocols. Some particularly useful ones are http, ftp,
+ sftp, smb, nfs, ssh (fish), man, tar and zip.
+
+Package: kio-dev
+Depends: libkf5kio-dev, ${misc:Depends}
+Architecture: any
+Priority: optional
+Section: oldlibs
+Description: transitional dummy package
+ This is a transitional dummy package. It can safely be removed.
+Breaks: kross-dev (<< 5.51),
+        libkf5declarative-dev (<< 5.51),
+        libkf5khtml-dev (<< 5.51),
+        libkf5newstuff-dev (<< 5.51),
+        libkf5notifyconfig-dev (<< 5.51),
+        libkf5parts-dev (<< 5.51)
+
+Package: libkf5kio-dev
+Section: libdevel
+Architecture: any
+Depends: kio (= ${binary:Version}),
+         libkf5bookmarks-dev (>= 5.51.0~),
+         libkf5completion-dev (>= 5.51.0~),
+         libkf5itemviews-dev (>= 5.51.0~),
+         libkf5jobwidgets-dev (>= 5.51.0~),
+         libkf5kiocore5 (= ${binary:Version}),
+         libkf5kiofilewidgets5 (= ${binary:Version}),
+         libkf5kiogui5 (= ${binary:Version}),
+         libkf5kiontlm5 (= ${binary:Version}),
+         libkf5kiowidgets5 (= ${binary:Version}),
+         libkf5service-dev (>= 5.51.0~),
+         libkf5solid-dev (>= 5.51.0~),
+         libkf5xmlgui-dev (>= 5.51.0~),
+         qtbase5-dev (>= 5.8.0~),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Breaks: kio-dev (<< 5.23.0-2~),
+        kross-dev (<< 5.51),
+        libkf5declarative-dev (<< 5.51),
+        libkf5khtml-dev (<< 5.51),
+        libkf5newstuff-dev (<< 5.51),
+        libkf5notifyconfig-dev (<< 5.51),
+        libkf5parts-dev (<< 5.51),
+        libkf5xmlrpcclient-dev (<< 5.51),
+        libkf5kio-doc (<< 5.61.90-0)
+Replaces: kio-dev (<< 5.23.0-2~), libkf5kio-doc (<< 5.61.90-0)
+Recommends: libkf5kio-doc (= ${source:Version})
+Description: resource and network access abstraction (development files)
+ KDE Input/Output framework provides a single API for
+ operating on files, whether local or on a remote server.
+ Additionally, KIO Slaves provide support for individual
+ protocols. Some particularly useful ones are http, ftp,
+ sftp, smb, nfs, ssh (fish), man, tar and zip.
+ .
+ This package contains the development files for kio.
+
+Package: libkf5kio-doc
+Architecture: all
+Section: doc
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: resource and network access abstraction (documentation)
+ KDE Input/Output framework provides a single API for
+ operating on files, whether local or on a remote server.
+ Additionally, KIO Slaves provide support for individual
+ protocols. Some particularly useful ones are http, ftp,
+ sftp, smb, nfs, ssh (fish), man, tar and zip.
+ .
+ This package contains the QCH documentation files.
+
+Package: libkf5kiocore5
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Multi-Arch: same
+Description: resource and network access abstraction (KIO core library)
+ KDE Input/Output framework provides a single API for
+ operating on files, whether local or on a remote server.
+ Additionally, KIO Slaves provide support for individual
+ protocols. Some particularly useful ones are http, ftp,
+ sftp, smb, nfs, ssh (fish), man, tar and zip.
+ .
+ This library contains the core classes.
+Breaks: baloo-kf5 (<< 5.51),
+        frameworkintegration (<< 5.28),
+        kdesignerplugin (<< 5.42),
+        kinit (<< 5.51),
+        kio (<< 5.53.0),
+        kross (<< 5.42),
+        ktexteditor-katepart (<< 5.42),
+        libkf5declarative5 (<< 5.42),
+        libkf5kdelibs4support5 (<< 5.51),
+        libkf5kdelibs4support5-bin (<< 5.51),
+        libkf5khtml-bin (<< 5.51),
+        libkf5khtml5 (<< 5.51),
+        libkf5krossui5 (<< 5.42),
+        libkf5mediaplayer5 (<< 5.42),
+        libkf5newstuff5 (<< 5.51),
+        libkf5notifyconfig5 (<< 5.42),
+        libkf5parts-plugins (<< 5.42),
+        libkf5parts5 (<< 5.51),
+        libkf5plasma5 (<< 5.42),
+        libkf5plasmaquick5 (<< 5.42),
+        libkf5purpose-bin (<< 5.51),
+        libkf5runner5 (<< 5.51),
+        libkf5texteditor5 (<< 5.51),
+        libkf5webkit5 (<< 5.51),
+        libkf5xmlrpcclient5 (<< 5.51),
+        plasma-framework (<< 5.51),
+        qml-module-org-kde-extensionplugin (<< 5.28),
+        qml-module-org-kde-kio (<< 5.42)
+Replaces: kio (<< 5.53.0)
+
+Package: libkf5kiofilewidgets5
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Multi-Arch: same
+Description: resource and network access abstraction (KIO file widgets library)
+ KDE Input/Output framework provides a single API for
+ operating on files, whether local or on a remote server.
+ Additionally, KIO Slaves provide support for individual
+ protocols. Some particularly useful ones are http, ftp,
+ sftp, smb, nfs, ssh (fish), man, tar and zip.
+ .
+ This library contains some file dialog widgets.
+Breaks: frameworkintegration (<< 5.28),
+        kdesignerplugin (<< 5.51),
+        kross (<< 5.51),
+        libkf5kdelibs4support5 (<< 5.51),
+        libkf5kdelibs4support5-bin (<< 5.42)
+
+Package: libkf5kiogui5
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Multi-Arch: same
+Description: resource and network access abstraction (KIO gui library)
+ KDE Input/Output framework provides a single API for
+ operating on files, whether local or on a remote server.
+ Additionally, KIO Slaves provide support for individual
+ protocols. Some particularly useful ones are http, ftp,
+ sftp, smb, nfs, ssh (fish), man, tar and zip.
+ .
+ This library contains gui related jobs.
+
+Package: libkf5kiontlm5
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Multi-Arch: same
+Description: resource and network access abstraction (KIO NTLM library)
+ KDE Input/Output framework provides a single API for
+ operating on files, whether local or on a remote server.
+ Additionally, KIO Slaves provide support for individual
+ protocols. Some particularly useful ones are http, ftp,
+ sftp, smb, nfs, ssh (fish), man, tar and zip.
+ .
+ This library implements the NTLM authentication protocol
+
+Package: libkf5kiowidgets5
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Multi-Arch: same
+Description: resource and network access abstraction (KIO widgets library)
+ KDE Input/Output framework provides a single API for
+ operating on files, whether local or on a remote server.
+ Additionally, KIO Slaves provide support for individual
+ protocols. Some particularly useful ones are http, ftp,
+ sftp, smb, nfs, ssh (fish), man, tar and zip.
+ .
+ This library contains some UI widgets.
+Breaks: baloo-kf5 (<< 5.42),
+        frameworkintegration (<< 5.28),
+        kdesignerplugin (<< 5.51),
+        kinit (<< 5.51),
+        kross (<< 5.42),
+        ktexteditor-katepart (<< 5.42),
+        libkf5declarative5 (<< 5.51),
+        libkf5kdelibs4support5 (<< 5.51),
+        libkf5kdelibs4support5-bin (<< 5.51),
+        libkf5khtml-bin (<< 5.42),
+        libkf5khtml5 (<< 5.51),
+        libkf5krossui5 (<< 5.51),
+        libkf5mediaplayer5 (<< 5.42),
+        libkf5newstuff5 (<< 5.51),
+        libkf5notifyconfig5 (<< 5.51),
+        libkf5parts-plugins (<< 5.42),
+        libkf5parts5 (<< 5.51),
+        libkf5plasma5 (<< 5.51),
+        libkf5plasmaquick5 (<< 5.42),
+        libkf5purpose-bin (<< 5.51),
+        libkf5texteditor5 (<< 5.51),
+        libkf5webkit5 (<< 5.51),
+        plasma-framework (<< 5.51),
+        qml-module-org-kde-kio (<< 5.51)

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<descriptor>
+
+<version>
+    5.6.0
+</version>
+
+<headers>
+    /usr/include/KF5/KIOCore/
+    /usr/include/KF5/KIOFileWidgets/
+    /usr/include/KF5/KIOWidgets/
+    /usr/include/KF5/kio/
+</headers>
+
+<libs>
+    /usr/lib/@@DEB_HOST_MULTIARCH@@/libKF5KIOCore.so
+    /usr/lib/@@DEB_HOST_MULTIARCH@@/libKF5KIOFileWidgets.so
+    /usr/lib/@@DEB_HOST_MULTIARCH@@/libKF5KIONTLM.so
+    /usr/lib/@@DEB_HOST_MULTIARCH@@/libKF5KIOWidgets.so
+</libs>
+
+<gcc_options>
+    -fPIC
+    -std=c++11
+    -I/usr/lib/@@DEB_HOST_MULTIARCH@@/qt5/mkspecs/linux-lsb-g++
+</gcc_options>
+
+</descriptor>
