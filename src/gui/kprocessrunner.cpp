@@ -243,6 +243,11 @@ void KProcessRunner::init(const KService::Ptr &service, const QString &userVisib
     startProcess();
 }
 
+//void ForkingProcessRunner::ForkingProcessRunner() {}
+ForkingProcessRunner::~ForkingProcessRunner()
+{
+}
+
 void ForkingProcessRunner::startProcess()
 {
     connect(m_process.get(), QOverload<int,QProcess::ExitStatus>::of(&QProcess::finished),

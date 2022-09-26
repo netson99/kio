@@ -123,7 +123,7 @@ class ForkingProcessRunner : public KProcessRunner
 
 public:
     explicit ForkingProcessRunner();
-
+    virtual ~ForkingProcessRunner();
     void startProcess() override;
     bool waitForStarted(int timeout) override;
 
